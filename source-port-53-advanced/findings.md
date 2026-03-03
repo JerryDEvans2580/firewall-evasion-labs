@@ -2,16 +2,18 @@
 
 ## 1. Initial Scan
 
-nmap p50000 -sS -Pn - -n -v <target>
+nmap target -sS -Pn -n --disable-arp-ping --source-port 53 -v
 
 Result:
-50000/tcp filtered
+22/tcp    open  ssh
+80/tcp    open  http
+50000/    tcp   filtered
 
 ---
 
 ## 2. Source Port Manipulation Test
 
-nmap -p50000 -sS -Pn -n --source-port 53 -v <target>
+nmap <targetIp> -p50000 -sS -Pn -n --disable-arp-ping --source-port 53 -v
 
 Result:
 50000/tcp open
@@ -20,7 +22,7 @@ Result:
 
 ## 3. Establishing Connection
 
-ncat -nv --source-port 53 <target> 50000
+ncat -nv --source-port 53 <targetIp> 50000
 
 Result:
 Connection established
