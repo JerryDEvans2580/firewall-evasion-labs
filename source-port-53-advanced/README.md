@@ -17,3 +17,11 @@ This allowed access to otherwise filtered internal services.
 - Bypass of network segmentation
 - Exposure of hidden services
 - Potential lateral movement vector
+
+## Attack Flow
+
+1. Port 50000 appeared filtered.
+2. Hypothesis: Firewall filtering in place.
+3. Tested source-port manipulation using 53.
+4. Port state changed to OPEN.
+5. Confirmed firewall trust misconfiguration.
