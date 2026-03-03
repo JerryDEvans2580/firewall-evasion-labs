@@ -5,8 +5,11 @@
 nmap target -sS -Pn -n --disable-arp-ping --source-port 53 -v
 
 Result:
+
 22/tcp    open  ssh
+
 80/tcp    open  http
+
 50000/    tcp   filtered
 
 ---
