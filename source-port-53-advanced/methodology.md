@@ -21,6 +21,17 @@ nmap <targetIp> -p50000 -sS -Pn -n --disable-arp-ping --source-port 53 -v
 Result:
 50000/tcp open
 
+
+## Evidence
+
+Initial scan result:
+
+50000/tcp filtered
+
+Bypass scan result:
+
+50000/tcp open
+
 ---
 
 ## 3. Establishing Connection
